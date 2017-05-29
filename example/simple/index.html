@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css">
+
+</head>
+<body>
+<div class="container">
+    <form id="form-example-1" class="form-example-1">
+        <h2>Exapmle 1</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="upper" for="text1">Text 1</label>
+                    <input type="text" class="form-control required" name="text1" placeholder="Text 1"
+                           id="text1" aria-required="true"  >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="upper" for="number1">Number 1</label>
+                    <input type="text" data-f_type="number" class="form-control required" name="number1" placeholder="Number 1"
+                           id="number1" aria-required="true" data-errormdessage="Enndek az elsőmezőnek a kitöltése kötelező" >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="upper" for="email1">Email 1</label>
+                    <input type="text" data-type="email" class="form-control required" name="email1" placeholder="Email 1"
+                           id="email1" aria-required="true" data-message_email="na ide csak e-mail írhatsz, mondjuk ezt: john.doe@example.com" data-message_required="Az e-mailt ki kell tölteni!!" >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="upper" for="text2">Text 2</label>
+                    <input type="text" class="form-control required" name="text2" placeholder="Text 2"
+                           id="text2" aria-required="true" data-errormessage="A yyyy">
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+            </div>
+        </div>
+    </form>
+
+</div> <!-- /container -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
+<script src="../../js/JQuery.fingerValidator.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
