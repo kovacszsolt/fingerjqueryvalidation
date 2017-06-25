@@ -19,14 +19,13 @@ _when the the fieldis not e-mail show this message_
 Use like this:
 ```
 jQuery(document).ready(function ($) {  
-    $.fn.fingerValifator.defaults.message_type = "notify";  
-    $.fn.fingerValifator.defaults.data_prefix = "f_";  
-    $('#form-example-1').fingerValifator().submit(function () {
+    $.fn.fingerValidator.defaults.message_type = "notify";  
+    $.fn.fingerValidator.defaults.data_prefix = "f_";  
+    $('#form-example-1').fingerValidator().submit(function () {
         console.log($(this).data('f_valid'));  
     });  
 });  
 ```
-see the exapmle directory
    
 ####Defults
 - data_prefix: html data element prefix eg. finger_type  default ='finger_'  
