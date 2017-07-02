@@ -23,17 +23,7 @@ $.fn.fingerValidator = function (options) {
 	 * @private
 	 */
 	function _showMessageNotify(message) {
-		$.notify({
-			message: message
-		}, {
-			animate: {
-				enter: 'animated fadeInDown',
-				exit: 'animated fadeOutUp'
-			},
-			delay: settings.notify_delay,
-			autoHide: false,
-			clickToHide: true
-		});
+        $.fn.fingerValidator.notify(message, settings.notify_delay);
 	}
 
 	/**
@@ -204,4 +194,26 @@ $.fn.fingerValidator.defaults = {
 	message_non_equal_deafult: 'a mezőknek egyeznie kell', //if not no equal error message use this
 	message_type: 'notify', // error notification type
 	notify_delay: 100 //notify delay time
+};
+
+/**
+ * Show notify message
+ * @param string message
+ * @param string delay
+ */
+$.fn.fingerValidator.notify = function (message, delay) {
+    if (delay === undefined) {
+        delay = 100;
+    }
+    $.notify({
+        message: message
+    }, {
+        animate: {
+            enter: 'animated fadeInDown',
+            exit: 'animated fadeOutUp'
+        },
+        delay: delay,
+        autoHide: false,
+        clickToHide: true
+    });
 };

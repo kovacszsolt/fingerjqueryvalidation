@@ -1,6 +1,6 @@
 {
   "name": "fingerjqueryvalidation",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Simple Jquery form Validator",
   "main": "js/JQuery.fingerValidator.js",
   "directories": {

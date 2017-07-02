@@ -26,6 +26,13 @@ jQuery(document).ready(function ($) {
     });  
 });  
 ```
+####Functions  
+  
+- $.fn.fingerValidator.notify(message, delay);  
+Show nofify style notification  
+- Parameters  
+  message = message text  
+  delay = message nofication delay (default value 100ms)
    
 ####Defults
 - data_prefix: html data element prefix eg. finger_type  default ='finger_'  
@@ -35,3 +42,9 @@ jQuery(document).ready(function ($) {
 - message_email_default: not email error message  
 - message_type: error notification type 'notify'/'alert'  
 - notify_delay: notify delay time
+
+#### Changelog
+- __0.5.0__  
+  - start  
+- __0.6.0__
+  - add notify function  
