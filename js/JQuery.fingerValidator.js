@@ -8,7 +8,7 @@ $.fn.fingerValidator = function (options) {
      * @private
      */
     function _isset(item) {
-        _return = true;
+        var _return = true;
         if (item === undefined) {
             _return = false;
         }
@@ -43,7 +43,7 @@ $.fn.fingerValidator = function (options) {
      * @private
      */
     function _showError(item, error_type, default_error_message) {
-        _message = item.data(error_type);
+        var _message = item.data(error_type);
         //Check data propert
         if (!_isset(_message)) {
             _label = $('label[for=' + item.attr('id') + ']');
@@ -88,6 +88,15 @@ $.fn.fingerValidator = function (options) {
         return regex.test(value);
     }
 
+    function _isURL(value) {
+        var _return=false;
+        if (value.substr(0,7) == 'http://' || value.substr(0,8) == 'https://') {
+            _return=true;
+        }
+        return _return;
+    }
+
+
     /**
      * Check value is email address
      * @param string value
@@ -105,11 +114,17 @@ $.fn.fingerValidator = function (options) {
      * @private
      */
     function _checkItemType(item, type) {
-        _return = true;
+        var _return = true;
         switch (type) {
             case 'number':
                 if (!_isNumber(item.val())) {
                     _showError(item, settings.data_prefix + 'message_number', settings.message_number_default);
+                    _return = false;
+                }
+                break;
+            case 'url':
+                if (!_isURL(item.val())) {
+                    _showError(item, settings.data_prefix + 'message_number', settings.message_url_default);
                     _return = false;
                 }
                 break;
@@ -130,8 +145,9 @@ $.fn.fingerValidator = function (options) {
      * @private
      */
     function _checkItem(item) {
-        _return = true;
+        var _return = true;
         var _id = item.attr('id');
+        var _type = '';
         // read type
         if (!_isset(item.data(settings.data_prefix + 'type'))) {
             _type = 'text';
@@ -173,7 +189,7 @@ $.fn.fingerValidator = function (options) {
             }
         }
         $('input, textarea, select').filter('.required').each(function (item) {
-            if (_checkItem($(this))) {
+            if (!_checkItem($(this))) {
                 _valid = 0;
             }
         });
@@ -193,6 +209,7 @@ $.fn.fingerValidator.defaults = {
     message_number_default: 'mező csak szám lehet', //if not number error message use this
     message_email_default: 'mező csak email lehet', //if not email error message use this
     message_non_equal_deafult: 'a mezőknek egyeznie kell', //if not no equal error message use this
+    message_url_default: 'mező csak URL-t tartalmazhat', //if not URL error message use this
     message_type: 'notify', // error notification type
     notify_delay: 100 //notify delay time
 };
@@ -213,4 +230,3 @@ $.fn.fingerValidator.notify = function (message, delay) {
         clickToHide: true
     });
 };
-
