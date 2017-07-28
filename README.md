@@ -39,7 +39,8 @@ Show nofify style notification
 - google_captcha_message: google captcha error message  
 - message_required_default: required default message 
 - message_number_default: not number error message  
-- message_email_default: not email error message  
+- message_email_default: not email error message
+- message_url_default: not URL error message
 - message_type: error notification type 'notify'/'alert'  
 - notify_delay: notify delay time
 
@@ -48,3 +49,5 @@ Show nofify style notification
   - start  
 - __0.6.0__
   - add notify function  
+- __0.7.0__
+  - add url check  
