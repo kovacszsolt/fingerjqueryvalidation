@@ -164,7 +164,7 @@ $.fn.fingerValidator = function (options) {
                 _return = false;
             }
             if (_isset(item.data(settings.data_prefix + 'equal'))) {
-                _equal_id = item.data(settings.data_prefix + 'equal');
+                var _equal_id = item.data(settings.data_prefix + 'equal');
                 if (item.val() != $('#' + _equal_id).val()) {
                     _ShowErrorBox(settings.message_non_equal_deafult);
                     _return = false;
